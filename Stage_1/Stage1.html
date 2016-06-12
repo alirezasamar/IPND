@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="pagestyle.css">
+		<meta charset="utf-8"/>
+		<title>
+			Udacity Stage 1
+		</title>
+	</head>
+	<body>
+		<h1>Stage 1</h1>
+
+		<div class="lesson">
+			<h2>1. The Basics of the Web and HTML:</h2>
+			<div class="notes">
+				<div class="concept-title">
+					<b>The Basics of the <a href=" http://en.wikipedia.org/wiki/Web_page"> Web</a></b>
+				</div>
+				<div class="concept-description">
+					<p>
+						<b>The web (www):</b> collection of html documents (HyperText Markup Language). HTML is what glues the Internet together. Around 30 billion pages
+					</p>
+					<p>
+						<b>Main pieces:</b> you, your computer + browser (a program to display files found on the web), the internet (the world largest computer network), http (the main protocol of the web), servers (computer in a closer that host the files)
+					</p>
+					<p>
+						<b>HTML (Hyper Text markup language):</b> is made up of text content (what you see), markup (what it looks like), references to other documents (e.g.: images + videos), links to other pages
+					</p>
+					<p>
+						<b>Computers are Stupid:</b>
+						Programmers need to write exactly the way a computer understands (also known as writing with correct "syntax").
+					</p>
+					<p>
+						<b>Abstract thinking to avoid repetition:</b> Abstract thinking means finding similarity, or as programmers would say, generality amongst seemingly different things. It would be impractical for a programmer to specifically program each of these pages individually. Abstraction allows to avoid unnecessary repetition of work.
+					<p>
+						<b>Programmers Can't Remember Everything:</b>
+						There are too many details to keep everything in your head.
+					</p>
+				</div>
+				<div class="concept-title">
+					<b>Basics of <a href="http://en.wikipedia.org/wiki/HTML">HTML </a></b>
+				</div>
+				<div class="concept-description">
+					<p>
+						<b>Basic HTML Vocabulary:</b>
+					<ul class="ulist1">
+						<li><span class="italic">Tag:</span> An HTML tag is always contained within angled brackets. Most tags have an opening tag (&lt;p&gt; for example) and a closing tag, (&lt;/p&gt;). Some tags (called "void" tags) do not require a closing tag (like the &lt;br&gt; tag).</li>
+						<li><span class="italic">Element:</span> An HTML element refers to everything within a set of opening and closing tags.</li>
+						<li><span class="italic">Attribute:</span> This is a property of an HTML element. For example, to set thehref attribute of an anchor tag to the Udacity URL, you would write&lt;a href="www.udacity.com"&gt;</li>
+					</ul>
+					<p>
+						<b>HTML Structure: </b>there are many tags. An opening for the type of document !DOCTYPE HTML>. Then HTML opening html>. Then head (metadata, title, etc.). then body.<br>
+						<b>Whitespace: </b> all blank in html translates to a space. For a new line: br break (void). It's an inline element. Br ends a line<br>
+						<b>Paragraph tag:</b> It's a block element. It's rendering an invisible box around the text. There are also <span class="italic">container elements</span><br>
+						<b>Span (inline) / Div (block):</b> they just contain the content, and you can add styles to them<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="lesson">
+			<h2>2. Creating a structured document with HTML:</h2>
+			<div class="notes">
+				<div class="concept-title">
+					Intro to HTML and CSS
+				</div>
+				<div class="concept-description">
+					<p>
+						<b>How do you translate a design to a website?</b><br>
+						Think of a website like a house:<br>
+					<ul class="ulist1">
+						<li>HTML: structure</li>
+						<li>CSS: style (decoration, colors,...)</li>
+						<li>Javascript: interactive components (remote control, garage door open, etc...)</li>
+						<li>Tools to build it</li>
+					</ul>
+					<p>
+						<b>HTML:</b> language of the web, specific syntax. Basic word is a tag. The browser turns the tags into elements that form a tree (HTML Tree-like structure or branching structure)<br>
+						All visible elements are rectangular on a webpage, all visible text is on the code. HTML elements are either inline or block.<br>
+						It does this thanks to Document Object Model (standard convention). Each HTML creates an element in the DOM that the browser uses to display the page. It can be empty, content or another element. Each tag has a name or type. Each tag can also have attributes with values.
+					</p>
+					<p>
+						<b>CSS:</b> another language. Allows to use specific syntax and rules to change how elements look on the page: font, size, background, position, color, etc.
+					</P>
+					<p>
+						<b>To tie HTML and CSS:</b> the HTML document can provide the browser with information on what style to use and where to get it.
+					</p>
+					<p>
+						<b>Everything is a box in a webpage:</b> Boxify a Design. Breakdown any design into boxes. Move from big to the small. <b>&lt;div&gt;</b> don't only contain the content, it creates a box around the content, to separate boxes. Add class names to identify them.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="lesson">
+			<h2>3. Adding CSS Style to HTML Structure:</h2>
+			<div class="notes">
+				<div class="concept-title">
+					<b>Basics of <a href="http://en.wikipedia.org/wiki/CSS">CSS </a></b>
+				</div>
+				<div class="concept-description">
+					<p>
+						<b>CSS stands for "Cascading Style Sheets"</b><br>
+						You can have several CSS files referenced in an HTML file. Most specific rule applies (Cascading)<br>
+						Style can be added on the same HTML file in between style tags and even inline (not a good idea)
+					</p>
+					<p>
+						<b>Inheritance:</b> is a key feature in CSS, it relies on the ancestor-descendant relationship to operate. Inheritance is the mechanism by which properties are applied not only to a specified element, but also to its descendants. It relies on the document tree. In general, descendant elements inherit text-related properties, but box-related properties are not inherited.<br>
+						In CSS you first write a selector, to identify what the style will be applied to. Another way is to select elements by class (attribute, column, value).<br>
+						CSS properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference<br>
+						Changing the style properties of an element only changes how the element is displayed, not the element itself
+					</p>
+					<p>
+						<b>Box Sizing:</b><br>
+					<ol class='olist1'>
+						<li>HTML elements are boxes and each box has 4 components</li>
+					<li>Because there are so many components to each box, it can often be hard to get the size of a box just right</li>
+					<li>There are two techniques you can use to help deal with sizing issues:</li>
+					<li>
+						<ul class='ulist2'>
+							<li>Set sizes in terms of percents rather than pixels</li>
+							<li>Set the box-sizing attribute to border-box for every element</li>
+						</ul>
+					</li>
+					<li>Different browsers work slightly differently. Sometimes this causes different browsers to display the same code differently</li>
+					</ol>
+					<p>
+						<b>Box Positioning:</b><br>
+						- Divs are block elements (as opposed to inline), so by default they take up the entire width of a page<br>
+						- Adding the rule display: flex; to the appropriate CSS will override this behavior and let divs appear next to each other<br>
+					</p>
+				</div>
+				<div class="concept-title">
+					<b>Other takeaways</b>
+				</div>
+				<div class="concept-description">
+					<p>
+						<b>Code - test - refine:</b><br>
+					<ol class='olist1'>
+						<li>Look for natural boxes</li>
+						<li>Look for repeated styles and semantic elements (relate to HTML)</li>
+						<li>Write HTML</li>
+						<li>Apply styles: from biggest to smallest</li>
+						<li>Fix things (resize windows, other browsers, etc.)</li>
+					</ol>
+					<p>
+						In HTML, code comments begin with greater!-- and end with -->. Everything in between is ignored. In CSS, code comments begin with /* and end with */.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
