@@ -1,5 +1,6 @@
 # Stage 2 Final Project
 
+# DATA BANK
 easy_quiz = '''In this stage, you will use the (1) programming language to build your own (2). 
 You will use a fill-in-the blank style to (3) a (2) that can even be used as a study tool 
 to help you remember important (4).'''
@@ -21,17 +22,24 @@ white_blanks = ['(1)', '(2)', '(3)', '(4)']
 
 levels = ['easy', 'medium', 'hard']
 
+# Default warnings/messages
 welcome = "*" * 50 + "\n" + "  Welcome to this quiz. \n  Please, type the level." + "\n" + "*" * 50
 congratulation = "*" * 50 + "\n" + "  Congratulation! You have completed this quiz! " + "\n" + "*" * 50
 sorry = "*" * 50 + "\n" + "  GAME OVER! " + "\n" + "*" * 50
 
 def check_answer(user_input_answer, answer, index_blank):
+	'''Check the answer right or wrong.
+	Input: [user_input_answer, answer, index_blank].
+	Output: [Correct or Incorrect]'''
 	if user_input_answer == answer[index_blank]:
 		return 'Correct'
 	else:
 		return 'Incorrect'
 
-def level_chosen(user_input_level):	
+def level_chosen(user_input_level):
+	'''Determine the game level, quiz, and answer. 
+	Input: [user_inpu]. 
+	Output :[quiz, answer, and level]'''	
 	while user_input_level not in levels:
 		user_input_level = raw_input( "Wrong input! \nPossible choices are easy, medium, and hard: "" ")
 	if user_input_level == 'easy':
@@ -41,19 +49,21 @@ def level_chosen(user_input_level):
 	else:
 		return hard_quiz, hard_answer , 'hard'
 
+# Main quize logic
 def fill_in_blanks():
-	user_input_level = raw_input( "Possible choices are 'easy', 'medium', and 'hard': "" ")
+	'''Fill in blank game, chose game level first, and then fill all the white blanks'''
+	user_input_level = raw_input( "Possible choices are easy, medium, and hard: "" ")
 	quiz, answer, difficulty_chosen = level_chosen(user_input_level)
-	print ("\n" + "Your level is " + difficulty_chosen + "." + "\n" + "*" * 50 + "\nYou have 5 guesses for each problem.\nThe quiz is: \n" + quiz + "\n")
+	print ("\n" + "You've chosen " + difficulty_chosen + " difficulty." + "\n" + "*" * 50 + "\nYou will get 5 guesses per problem.\nThe quiz is: \n" + quiz + "\n")
 	index_blank, num_guess, total_guess = 0, 1, 5
-	while index_blank < len(white_blanks) and num_guess < total_guess:
-		num_guess = 0
-		user_input_answer = raw_input("What is " + str(white_blanks[index_blank]) + "? ")
-		while check_answer(user_input_answer, answer, index_blank) == 'Incorrect' and num_guess < total_guess:
+	while index_blank < len(white_blanks) and num_guess < total_guess: # Check make the game end. 
+		num_guess = 0 # Guess number reset.
+		user_input_answer = raw_input("What should be filled in for " + str(white_blanks[index_blank]) + "? ")
+		while check_answer(user_input_answer, answer, index_blank) == 'Incorrect' and num_guess < total_guess:# Force the answer_input stop.
 			print "You have " + str(total_guess - num_guess) + " try left"
-			user_input_answer = raw_input("Oops, wrong answer, try again: " + " ")
+			user_input_answer = raw_input("The answer is wrong, try again: " + " ")
 			num_guess += 1		
-		if 	check_answer(user_input_answer, answer, index_blank) == 'Correct': 
+		if 	check_answer(user_input_answer, answer, index_blank) == 'Correct': # Answer being checked.
 			quiz = quiz.replace(white_blanks[index_blank], user_input_answer)
 			print "Correct! \n" + quiz + "\n"
 		index_blank += 1
