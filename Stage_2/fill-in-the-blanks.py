@@ -47,7 +47,7 @@ def fill_in_blanks():
 	print ("\n" + "Your level is " + difficulty_chosen + "." + "\n" + "*" * 50 + "\nYou have 5 guesses for each problem.\nThe quiz is: \n" + quiz + "\n")
 	index_blank, num_guess, total_guess = 0, 1, 5
 	while index_blank < len(white_blanks) and num_guess < total_guess:
-		num_guess = 1
+		num_guess = 0
 		user_input_answer = raw_input("What is " + str(white_blanks[index_blank]) + "? ")
 		while check_answer(user_input_answer, answer, index_blank) == 'Incorrect' and num_guess < total_guess:
 			print "You have " + str(total_guess - num_guess) + " try left"
